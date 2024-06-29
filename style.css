@@ -1,0 +1,137 @@
+:root {
+  --color-light-gray: #777;
+  --color-gray: #333;
+  --color-white: #fff;
+  --color-yellow: #ee1;
+  --color-black: #111;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+}
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-gray);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 500px;
+  min-height: 90vh;
+  margin: 1rem auto;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  border: 0.1rem solid var(--color-white);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 1rem;
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.input {
+  max-width: 100%;
+  width: 100%;
+  height: 3rem;
+  padding: 0.2rem 0.5rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  border: 0.1rem solid var(--color-white);
+  color: var(--color-white);
+  font-size: 1.5rem;
+  text-transform: lowercase;
+}
+
+.right {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+}
+
+.semiright {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.wrong {
+  background-color: var(--color-light-gray);
+  color: var(--color-black);
+}
+
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.win-text,
+.lose-text,
+.right-word {
+  display: none;
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+
+.button {
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+  transition: transform 0.3s ease;
+}
+
+.button:disabled {
+  background-color: #1e1;
+}
+
+.button:not(:disabled):active {
+  transform: scale(0.9);
+}
+
+.love-heart {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  font-size: 200px;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.5s ease;
+  transition-property: transform, opacity;
+}
+
+.love-heart.visible {
+  opacity: 1;
+  transform: scale(1);
+}
